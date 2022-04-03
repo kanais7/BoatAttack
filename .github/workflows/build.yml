@@ -17,7 +17,7 @@ jobs:
       - name: Run a multi-line script
         run: |
           git init
-          git remote add origin git@github.com:kanais7/BoatAttack.git
+          git remote add origin https://github.com/kanais7/BoatAttack.git
 
           git config lfs.fetchinclude '*.dll'
 
