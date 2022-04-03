@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI
 
 on:
@@ -15,12 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Run a one-line script
-        run: echo Hello, world!
 
       - name: Run a multi-line script
         run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+          git init
+          git remote add origin git@github.com:kanais7/BoatAttack.git
+
+          git config lfs.fetchinclude '*.dll'
+
+          git fetch --depth=1 origin master
+          git lfs fetch origin origin/master
+          
+          git checkout master
