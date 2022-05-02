@@ -7,6 +7,15 @@
       "dependencies": {},
       "url": "https://package.openupm.com"
     },
+    "com.kanais7.unitycompiletester": {
+      "version": "https://github.com/kanais7/UnityCompileTester.git?path=Assets/CompileTester",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.scriptablebuildpipeline": "1.19.6"
+      },
+      "hash": "b4a9e11b94f1c0748cc9b401b44000fbf6d15279"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,
@@ -137,7 +146,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.scriptablebuildpipeline": {
-      "version": "1.19.3",
+      "version": "1.19.6",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
