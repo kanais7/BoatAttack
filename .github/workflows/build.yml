@@ -13,8 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
-      - name: Run a multi-line script
+      - name: Checkout
         run: |
           git init
           git remote add origin https://github.com/kanais7/BoatAttack.git
@@ -25,3 +24,18 @@ jobs:
           git lfs fetch origin origin/master
           
           git checkout master
+
+      - name: Cache
+        uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Build
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        with:
+          buildMethod: CompileTester.DefaultTests.StandaloneOSX
