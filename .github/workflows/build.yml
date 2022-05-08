@@ -38,4 +38,4 @@ jobs:
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          buildMethod: CompileTester.DefaultTests.StandaloneOSX
+          buildMethod: CompileTester.DefaultTests.CurrentPlatform
