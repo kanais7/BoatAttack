@@ -36,6 +36,10 @@ jobs:
           
           git checkout ${branch_name}
 
+      - uses: actions/setup-dotnet@v2
+        with:
+          dotnet-version: '5.0.x'
+
       - name: Cache
         uses: actions/cache@v2
         with:
