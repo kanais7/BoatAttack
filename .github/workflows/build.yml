@@ -24,15 +24,17 @@ jobs:
     steps:
       - name: Checkout
         run: |
+          branch_name=${GITHUB_REF#refs/heads/}
+
           git init
           git remote add origin https://github.com/kanais7/BoatAttack.git
 
           git config lfs.fetchinclude '*.dll'
 
-          git fetch --depth=1 origin master
-          git lfs fetch origin origin/master
+          git fetch --depth=1 origin ${branch_name}
+          git lfs fetch origin origin/${branch_name}
           
-          git checkout master
+          git checkout ${branch_name}
 
       - name: Cache
         uses: actions/cache@v2
